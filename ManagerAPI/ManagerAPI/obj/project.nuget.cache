@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "r61u/iS9U5F1cT1rPHaDkvdnTNu1SpP6g5KEvaQL1DsxP2MEwXtJxppplUVdnULtpxXnXsN6YYQz6vX1+v+Gsw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\alant\\OneDrive\\Escritorio\\ProjectManager\\ManagerAPI\\ManagerAPI\\ManagerAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alant\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\alant\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\alant\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "C:\\Users\\alant\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "C:\\Users\\alant\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "C:\\Users\\alant\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
