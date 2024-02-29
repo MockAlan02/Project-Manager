@@ -14,4 +14,5 @@
         public UserRol? Rol { get; set; }
         public List<Tarea>? Tareas { get; set; }
     }
+
 }
