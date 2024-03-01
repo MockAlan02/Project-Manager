@@ -1,0 +1,70 @@
+[
+  {
+    "Id": 1,
+    "Correo": "alantubert09@gmail.com",
+    "Contrasena": "1234",
+    "UserDetail": {
+      "Id": 1,
+      "Nombre": "Alan",
+      "FechaNacimiento": "2004-03-02T00:00:00",
+      "Direccion": "Carmen Renata 3",
+      "Edad": 19
+    },
+    "Rol": "1",
+    "AsignacionesTareas": null
+  },
+  {
+    "Id": 2,
+    "Correo": "manuela@gmail.com",
+    "Contrasena": "",
+    "UserDetail": {
+      "Id": 2,
+      "Nombre": "Manuela",
+      "FechaNacimiento": "1998-03-02T00:00:00",
+      "Direccion": "Pantoja",
+      "Edad": 25
+    },
+    "Rol": "Regular",
+    "AsignacionesTareas": null
+  },
+  {
+    "Id": 4,
+    "Correo": "perez@gmail.com",
+    "Contrasena": "1234",
+    "UserDetail": {
+      "Id": 4,
+      "Nombre": "perez",
+      "FechaNacimiento": "1998-03-01T01:22:57.945Z",
+      "Direccion": "Pantoja",
+      "Edad": 26
+    },
+    "Rol": "Regular",
+    "AsignacionesTareas": [
+      {
+        "UsuarioId": 1,
+        "TareaId": 0,
+        "Id": 0
+      }
+    ]
+  },
+  {
+    "Id": 5,
+    "Correo": "perez@gmail.com",
+    "Contrasena": "1234",
+    "UserDetail": {
+      "Id": 5,
+      "Nombre": "perez",
+      "FechaNacimiento": "1998-03-01T01:22:57.945Z",
+      "Direccion": "Pantoja",
+      "Edad": 26
+    },
+    "Rol": "Regular",
+    "AsignacionesTareas": [
+      {
+        "UsuarioId": 5,
+        "TareaId": 1,
+        "Id": 0
+      }
+    ]
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "Id": 1,
+    "Correo": "alantubert09@gmail.com",
+    "Contrasena": "1234",
+    "UserDetail": {
+      "Id": 1,
+      "Nombre": "Alan",
+      "FechaNacimiento": "2004-03-02T00:00:00",
+      "Direccion": "Carmen Renata 3",
+      "Edad": 19
+    },
+    "Rol": "1",
+    "Tareas": null
+  },
+  {
+    "Id": 2,
+    "Correo": "manuela@gmail.com",
+    "Contrasena": "",
+    "UserDetail": {
+      "Id": 2,
+      "Nombre": "Manuela",
+      "FechaNacimiento": "1998-03-02T00:00:00",
+      "Direccion": "Pantoja",
+      "Edad": 25
+    },
+    "Rol": "Regular",
+    "Tareas": null
+  }
+]
