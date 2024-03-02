@@ -17,6 +17,16 @@ namespace ManagerAPI.Controllers
         {
             usuarioService = new("./Json/Usuarios.json","./Json/AsignacionTarea.json");
         }
+        [HttpGet("All")]
+        public ActionResult GetAll()
+        {
+            var users = usuarioService.GetAll();
+            if (User == null)
+            {
+                return null!;
+            }
+            return Ok(users);
+                }
         [HttpGet]
         public ActionResult IniciarSesion(string correo, string contrasena)
         {

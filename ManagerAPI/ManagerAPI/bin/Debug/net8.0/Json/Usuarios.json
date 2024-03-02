@@ -11,7 +11,7 @@
       "Edad": 19
     },
     "Rol": "1",
-    "Tareas": null
+    "AsignacionesTareas": null
   },
   {
     "Id": 2,
@@ -25,6 +25,46 @@
       "Edad": 25
     },
     "Rol": "Regular",
-    "Tareas": null
+    "AsignacionesTareas": null
+  },
+  {
+    "Id": 4,
+    "Correo": "perez@gmail.com",
+    "Contrasena": "1234",
+    "UserDetail": {
+      "Id": 4,
+      "Nombre": "perez",
+      "FechaNacimiento": "1998-03-01T01:22:57.945Z",
+      "Direccion": "Pantoja",
+      "Edad": 26
+    },
+    "Rol": "Regular",
+    "AsignacionesTareas": [
+      {
+        "UsuarioId": 1,
+        "TareaId": 0,
+        "Id": 0
+      }
+    ]
+  },
+  {
+    "Id": 5,
+    "Correo": "perez@gmail.com",
+    "Contrasena": "1234",
+    "UserDetail": {
+      "Id": 5,
+      "Nombre": "perez",
+      "FechaNacimiento": "1998-03-01T01:22:57.945Z",
+      "Direccion": "Pantoja",
+      "Edad": 26
+    },
+    "Rol": "Regular",
+    "AsignacionesTareas": [
+      {
+        "UsuarioId": 5,
+        "TareaId": 1,
+        "Id": 0
+      }
+    ]
   }
 ]

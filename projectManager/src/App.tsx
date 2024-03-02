@@ -9,6 +9,8 @@ import AdminPage from './Routes/AdminPage';
 import React from 'react';
 import Menu from './components/Menu';
 import MenuAdmin from './components/MenuAdmin';
+import Tarea from './Routes/TareasPage';
+
 
 const MenuWrapper: React.FC<{ element: React.ReactNode }> = ({ element }) => (
   <>
@@ -19,8 +21,8 @@ const MenuWrapper: React.FC<{ element: React.ReactNode }> = ({ element }) => (
 
 const MenuAdminWrapper: React.FC<{ element: React.ReactNode }> = ({ element }) => (
   <>
-    <MenuAdmin />
-    {element}
+  <MenuAdmin/>
+  {element}
   </>
 );
 
@@ -45,6 +47,10 @@ const App = createBrowserRouter([
   {
     path:"/dashboard",
     element: <MenuAdminWrapper element={<AdminPage/>}/>
+  },
+  {
+    path:"/dashboard/:id",
+    element: <MenuAdminWrapper element={<Tarea/>}/>
   }
 ]);
 

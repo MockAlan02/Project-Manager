@@ -26,5 +26,9 @@ namespace ManagerAPI.Services
         {
             return _tareaServices!.GetAll();
         }
+        public Tarea GetById(int id)
+        {
+            return _tareaServices?.BuscarPorId(id)!;
+        }
     }
 }

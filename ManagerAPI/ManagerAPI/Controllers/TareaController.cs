@@ -18,6 +18,16 @@ namespace ManagerAPI.Controllers
         {
             return Ok(_tareaServices!.GetAll());
         }
+
+        [HttpGet("id")]
+        public ActionResult GetId(int id) {
+            var data = _tareaServices.GetById(id);  
+            if(data == null)
+            {
+                return BadRequest();
+            }
+            return Ok(data);
+        }
         [HttpPost]
         public ActionResult Post(Tarea tarea)
         {

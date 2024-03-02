@@ -24,6 +24,7 @@ export const theme = {
       ring: "hsl(var(--ring))",
       background: "hsl(var(--background))",
       foreground: "hsl(var(--foreground))",
+      "dark-color": "#020817",
         "custom-black": "#0E2528",
         "custom-green": "#003338",
         "custom-blue": "#070F2B",

@@ -85,5 +85,9 @@ namespace ManagerAPI.Repositorio
            var user =  _usuarios.FirstOrDefault(user => user.Correo == username && user.Contrasena == password);
             return user!;
         }
+        public List<Usuario> GetAll()
+        {
+            return _usuarios;
+        }
     }
 }

@@ -7,5 +7,12 @@ namespace ManagerAPI.Model
             private int id;
             public int UsuarioId { get; set; }
             public int TareaId { get; set;}
+            public int Id
+        {
+            get
+            {
+                return id;
+            }
+        }
     }
 }

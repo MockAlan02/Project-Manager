@@ -33,6 +33,10 @@ namespace ManagerAPI.Services
         {
             _usuarioService.Actualizar(id, user);
         }
+        public List<Usuario> GetAll()
+        {
+            return _usuarioService.GetAll();
+        }
 
     }
 }
