@@ -40,7 +40,7 @@ export default function AdminPage() {
 
   useEffect(() => {
     // Llamar a la API para obtener los datos de los proyectos
-    fetch("https://localhost:7038/api/Proyecto")
+    fetch("https://localhost:7038/api/Facade/Proyectos")
       .then((response) => response.json())
       .then((data) => setDatosProyecto(data))
       .catch((error) =>

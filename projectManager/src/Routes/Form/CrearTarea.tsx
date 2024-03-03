@@ -28,7 +28,7 @@ type Inputs = {
   const [persona, SetPersona] = useState<Personas[] | null>(null);
 
   useEffect(() => {
-    fetch("https://localhost:7038/api/Usuario/All")
+    fetch("https://localhost:7038/api/Facade")
       .then((response) => response.json())
       .then((data) => {
         SetPersona(data);
@@ -49,9 +49,9 @@ type Inputs = {
     e?.preventDefault();
     console.log(ProyectoId)
     data = {...data, ExpireTime: new Date(date?.toISOString() as string) , "ProyectoId": ProyectoId}
-    data.Estado = true
-    console.log(data)
-    fetch("https://localhost:7038/api/Tarea/Crear", {
+    data.Estado = Boolean(data.Estado );
+
+    fetch("https://localhost:7038/api/Facade/Crear", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
