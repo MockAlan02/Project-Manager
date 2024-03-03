@@ -8,5 +8,20 @@
     "UsuarioId": 5,
     "TareaId": 1,
     "Id": 0
+  },
+  {
+    "UsuarioId": 0,
+    "TareaId": 2,
+    "Id": 0
+  },
+  {
+    "UsuarioId": 2,
+    "TareaId": 3,
+    "Id": 0
+  },
+  {
+    "UsuarioId": 5,
+    "TareaId": 4,
+    "Id": 0
   }
 ]

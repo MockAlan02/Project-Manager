@@ -37,6 +37,10 @@ namespace ManagerAPI.Services
         {
             return _usuarioService.GetAll();
         }
+        public Usuario BuscarPorId(int id)
+        {
+            return _usuarioService.BuscarPorId(id);
+        }
 
     }
 }

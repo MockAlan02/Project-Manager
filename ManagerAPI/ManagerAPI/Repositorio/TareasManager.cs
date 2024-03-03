@@ -20,6 +20,10 @@ namespace ManagerAPI.Repositorio
         {
            return _tareas.FirstOrDefault(ta => ta.Id == Id)!;
         }
+        public List<Tarea> BuscarProyctoId(int id)
+        {
+            return _tareas.Where(tare => tare.ProyectoId == id).ToList();
+        }
 
         
         public Tarea Guardar(Tarea Data)

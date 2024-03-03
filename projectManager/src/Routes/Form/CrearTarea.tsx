@@ -16,13 +16,11 @@ type CrearTareaProps = {
     };
 export default function CrearTarea({open , onClose, ProyectoId}: CrearTareaProps) {
 
-  
-
 type Inputs = {
     ProyectoId: number;
     Detalles: string;
     Estado: boolean;
-    ExpireTime: string;
+    ExpireTime: Date;
     PersonaId: number;
   };
   
@@ -50,8 +48,23 @@ type Inputs = {
   const onSubmit: SubmitHandler<Inputs> = (data, e) => {
     e?.preventDefault();
     console.log(ProyectoId)
-    data = {...data, ExpireTime: date?.toISOString() as string, "ProyectoId": ProyectoId}
-    console.log(data);
+    data = {...data, ExpireTime: new Date(date?.toISOString() as string) , "ProyectoId": ProyectoId}
+    data.Estado = true
+    console.log(data)
+    fetch("https://localhost:7038/api/Tarea/Crear", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   }
  
   if(!open) {return null}

@@ -93,5 +93,9 @@ namespace ManagerAPI.Repositorio
         {
             return _asignaciones.FirstOrDefault(asign => asign.Id == id)!;
         }
+        public AsignacionTarea BuscarPorTarea(int id)
+        {
+            return _asignaciones.FirstOrDefault(asign => asign.TareaId == id)!;
+        }
     }
 }
