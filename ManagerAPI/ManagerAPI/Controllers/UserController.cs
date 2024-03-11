@@ -3,19 +3,24 @@ using ManagerAPI.Model;
 using ManagerAPI.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Persistencia.Context;
 using System.Diagnostics.Contracts;
 
 namespace ManagerAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [ApiExplorerSettings(IgnoreApi = true)]
     public class UsuarioController : ControllerBase
     {
         private UsuarioService usuarioService;
+        private readonly Interfaces.ILogger logger;
 
-        public UsuarioController()
+        public UsuarioController(SqlContext context)
         {
-            usuarioService = new("./Json/Usuarios.json","./Json/AsignacionTarea.json");
+            usuarioService = new(context, context);
+            logger = new Logger.Logger("./Texto/AutoSaving.txt");
         }
         [HttpGet("All")]
         public ActionResult GetAll()
@@ -27,7 +32,7 @@ namespace ManagerAPI.Controllers
             }
             return Ok(users);
                 }
-        [HttpGet]
+      /*  [HttpGet]
         public ActionResult IniciarSesion(string correo, string contrasena)
         {
             var user = usuarioService.IniciarSesion(correo, contrasena);
@@ -36,14 +41,16 @@ namespace ManagerAPI.Controllers
                 return Ok(user);
             }
             return BadRequest();
-        }
+        }*/
         [HttpPost]
         public ActionResult CrearUsuario(Usuario usuario)
         {
             if (usuario != null)
             {
-              
-                return Ok(usuarioService.CrearUsuario(usuario));
+                var userString = JsonConvert.SerializeObject(usuario);
+                logger.Info(" se creo el usuario su info es  " + userString);
+                usuarioService.CrearUsuario(usuario);
+                return Ok();
             }
             return BadRequest();
         }
@@ -53,6 +60,7 @@ namespace ManagerAPI.Controllers
         {
             if (id != null)
             {
+                logger.Info("Se elimino el usuario de id " + id);
                 usuarioService.BorrarUsuario(id);
                 return Ok();
             }
@@ -63,6 +71,8 @@ namespace ManagerAPI.Controllers
         {
             if(id != null && usuario != null)
             {
+                var usuarioString = JsonConvert.SerializeObject(usuario);
+                logger.Info("se actualizo el usuario de id " + id + " la info nueva del usuario es " + usuarioString);
                 usuarioService.ActualizarUsuario(id, usuario);
                 return Ok();
             }

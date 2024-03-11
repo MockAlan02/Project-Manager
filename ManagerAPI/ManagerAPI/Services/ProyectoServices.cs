@@ -1,28 +1,29 @@
 ﻿using ManagerAPI.Model;
 using ManagerAPI.Repositorio;
+using Persistencia.Context;
 
 namespace ManagerAPI.Services
 {
     public class ProyectoServices
     {
         private readonly ProyectoManager _proyectoServices;
-        public ProyectoServices(string pathJson)
+        public ProyectoServices(ProjectManagerContext context)
         {
-            _proyectoServices = new(pathJson);
+            _proyectoServices = new(context);
         }
 
 
-        public Proyectos CrearProyecto(Proyectos proyecto)
+        public void CrearProyecto(Proyectos proyecto)
         {
-            return _proyectoServices.Guardar(proyecto);
+            _proyectoServices.Insert(proyecto);
         }
         public void EliminarProyecto(int id)
         {
             _proyectoServices.Delete(id);
         }
-        public Proyectos ActualizarProyecto(int id, Proyectos proyecto)
+        public void ActualizarProyecto(int id, Proyectos proyecto)
         {
-            return _proyectoServices.Actualizar(id, proyecto);
+            _proyectoServices.Update(id, proyecto);
         }
         public List<Proyectos> GetAll()
         {

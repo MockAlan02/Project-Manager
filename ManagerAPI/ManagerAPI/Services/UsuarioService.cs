@@ -1,5 +1,7 @@
 ﻿using ManagerAPI.Model;
 using ManagerAPI.Repositorio;
+using Persistencia.Context;
+using Persistencia.Dto;
 
 namespace ManagerAPI.Services
 {
@@ -8,22 +10,16 @@ namespace ManagerAPI.Services
         private readonly UsuarioManager _usuarioService;
         private readonly AsignacionTareaServices _asignacionTareaServices;
 
-        public UsuarioService(string pathJson, string pathAsignacion)
+        public UsuarioService(ProjectManagerContext usercontext, ProjectManagerContext asignContext)
         {
-            _usuarioService = new(pathJson);
-            _asignacionTareaServices = new(pathAsignacion);
+            _usuarioService = new(usercontext);
+            _asignacionTareaServices = new(asignContext);
         }
 
-        public Usuario IniciarSesion(string correo, string contrasena) 
+        public void CrearUsuario(Usuario usuario)
         {
-           
-            return _usuarioService.IniciarSesion(correo, contrasena);
-        }
-
-        public Usuario CrearUsuario(Usuario usuario)
-        {
-            _asignacionTareaServices.CrearAsignacion(usuario.AsignacionesTareas!);
-            return _usuarioService.Guardar(usuario);
+            _usuarioService.Insert(usuario);
+            
         }
         public void BorrarUsuario(int id)
         {
@@ -31,15 +27,20 @@ namespace ManagerAPI.Services
         }
         public void ActualizarUsuario(int id, Usuario user)
         {
-            _usuarioService.Actualizar(id, user);
+            _usuarioService.Update(id, user);
         }
-        public List<Usuario> GetAll()
+        public List<UserDto> GetAll()
         {
-            return _usuarioService.GetAll();
+            return _usuarioService.GetAllUserDto();
+        }
+
+        public List<UserDto> GetAllUserDto()
+        {
+            return _usuarioService.GetAllUserDto();
         }
         public Usuario BuscarPorId(int id)
         {
-            return _usuarioService.BuscarPorId(id);
+            return _usuarioService.GetById(id);
         }
 
     }

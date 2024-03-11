@@ -4,70 +4,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import CrearTarea from "./Form/CrearTarea";
 import { Tareas } from "@/components/Tareas";
-import { useToast } from "@/components/ui/use-toast"
-
-
-interface DetallesDto {
-  nombre: string;
-  detalles: string;
-  estado: boolean;
-  expireTime: string;
-}
-interface Props {
-  open: boolean;
-  onClose: () => void;
-  detalles: DetallesDto;
-  tareaid: number;
-}
-
-export async function deleteItem(itemId :number) {
-
- 
-  try {
-    const response = await fetch(`https://localhost:7038/api/Facade?id=${itemId}`, {
-      method: 'DELETE',
-    });
-
-    if (!response.ok) {
-      throw new Error('Error al eliminar el item');
-    }
-   
-    return await response.json();
-  } catch (error) {
-    console.error('Error:', error);
-    throw error;
-  }
-}
-
-function Detalles({ open, onClose, detalles, tareaid }: Props) {
-  const { toast } = useToast()
-  if (!open) {
-    return null;
-  }
-  return (
-    <div className=" w-full h-[80%] flex justify-center items-center flex-col">
-      <div className="w-3/12 bg-blue-950 h-auto p-6 rounded-xl">
-        <h1 className="text-3xl mb-8 font-bold">Detalles Cliente</h1>
-        <p > <span className="font-medium mr-2">Nombre:</span> {detalles.nombre}</p>
-        <p > <span className="font-medium mr-2">Detalles:</span> {detalles.detalles}</p>
-        <p > <span className="font-medium mr-2">Fecha Vencimiento</span>: {new Date(detalles.expireTime).toLocaleDateString()}</p>
-        <p > <span className="font-medium mr-2">Estado:</span> {detalles.estado ? "Activo" : "Inactivo"}</p>
-        <div className="w-full flex justify-end  gap-x-3 mt-4">
-        <Button type="button" className="w-[120px] " onClick={onClose}> Cerrar
-        </Button >
-        <Button variant="destructive" className="w-[120px]" onClick={() => {deleteItem(tareaid)
-         toast({
-          title: "Borrado Exitoso.",
-          description: "La tarea del cliente ha sido Eliminado con exito",
-        })}}>
-          Borrar
-        </Button>
-        </div>
-         
-      </div>
-    </div>
-  );
-}
+import { DetallesDto } from "@/Interface/Detalles";
+import Detalles from "@/components/Detalles";
+import { getTarea, tareaSeleccionado } from "@/Api/TareaApi/TareaApi";
 
 export default function Tarea() {
   const [open, setOpen] = useState(false);
@@ -79,39 +18,47 @@ export default function Tarea() {
   const [tareaSeleccionada, setTareaSeleccionada] = useState<number | null>(
     null
   );
-  const [detalles2, setDetalles] = useState<DetallesDto | null>(null);
+  const [detalles, setDetalles] = useState<DetallesDto | null>(null);
+  
+  //Usar el hook useEffect para obtener las tareas id
   const handleClick = (index: number) => {
     if (index == null) {
       return;
     }
     setTareaSeleccionada(index);
   };
-
+  //Usar el hook useEffect para obtener las tareas
   useEffect(() => {
-    fetch(`https://localhost:7038/api/Facade/ProyectoId?id=${id}`)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data == null || data.status == 400) {
-          return;
-        }
-        setTarea(data);
-      })
-      .catch((error) =>
-        console.error("Error al obtener los datos de los proyectos:", error)
-      );
-  }, [id]);
+    getTarea(num).then((data) => {
+      if (data == null) return;
+      setTarea(data);
+    });
+  }, [tareas]);
+
 
   useEffect(() => {
     if (tareaSeleccionada == null) return;
-
-    fetch(`https://localhost:7038/api/Facade/Detalles?id=${tareaSeleccionada}`)
-      .then((response) => response.json())
-      .then((data) => setDetalles(data))
-      .catch((err) => console.log(err));
-      console.log(detalles2)
-
-    if (detalles2 != null) setOpen2(true);
+    tareaSeleccionado(tareaSeleccionada).then((data) => {
+      if (data == null) return;
+      setDetalles(data);
+      setOpen2(true);
+    });
+   
   }, [tareaSeleccionada]);
+
+  const handleDetallesClose = () => {
+    
+    setTareaSeleccionada(null);
+    setTarea(null)
+    setDetalles(null); // Reinicia los detalles
+    setOpen2(false);
+  };
+  
+
+  const handleDetallesClose2 = () => {
+    setOpen(false);
+    setDetalles(null);
+  };
 
   return (
     <main className="w-full max-h-[100%]">
@@ -127,12 +74,12 @@ export default function Tarea() {
           <h1 className="text-3xl font-bold">Tarea</h1>
           {tareas && <Tareas tareas={tareas} handleClick={handleClick} />}
 
-          {open2 && detalles2 && (
+          {open2 && detalles && (
             <div className="fixed inset-0 bg-black/90  z-10">
               <Detalles
-                detalles={detalles2}
+                detalles={detalles}
                 open={open2}
-                onClose={() => setOpen2(!open2)}
+                onClose={handleDetallesClose}
                 tareaid={tareaSeleccionada as number}
               />
             </div>
@@ -143,7 +90,7 @@ export default function Tarea() {
             {" "}
             <CrearTarea
               open={open}
-              onClose={() => setOpen(!open)}
+              onClose={handleDetallesClose2}
               ProyectoId={num}
             />
           </div>

@@ -1,26 +1,24 @@
 ﻿using ManagerAPI.Model;
 using ManagerAPI.Repositorio;
+using Persistencia.Context;
 
 namespace ManagerAPI.Services
 {
     public class AsignacionTareaServices
     {
         private readonly AsignacionManager? _asignacionService;
-        public AsignacionTareaServices(string pathJson)
+        public AsignacionTareaServices(ProjectManagerContext context)
         {
-            _asignacionService = new(pathJson);
+            _asignacionService = new(context);
         }
-        public AsignacionTarea CrearAsignacion(AsignacionTarea tarea)
+        public void CrearAsignacion(AsignacionTarea tarea)
         {
-            return _asignacionService?.Guardar(tarea)!;
+            _asignacionService?.Insert(tarea);
         }
-        public void CrearAsignacion(List<AsignacionTarea> tarea)
+    
+        public void ActualizarAsignacion(int id, AsignacionTarea tarea)
         {
-            _asignacionService!.Guardar(tarea);
-        }
-        public AsignacionTarea ActualizarAsignacion(int id, AsignacionTarea tarea)
-        {
-            return _asignacionService?.Actualizar(id, tarea)!;
+            _asignacionService?.Update(id, tarea);
         }
         public void BorrarAsignacion(int id)
         {

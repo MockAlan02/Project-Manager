@@ -1,27 +1,27 @@
 [
   {
-    "UsuarioId": 1,
-    "TareaId": 0,
-    "Id": 0
-  },
-  {
-    "UsuarioId": 5,
-    "TareaId": 1,
-    "Id": 0
-  },
-  {
     "UsuarioId": 0,
-    "TareaId": 2,
-    "Id": 0
-  },
-  {
-    "UsuarioId": 2,
     "TareaId": 3,
     "Id": 0
   },
   {
-    "UsuarioId": 5,
-    "TareaId": 4,
+    "UsuarioId": 2,
+    "TareaId": 10,
+    "Id": 0
+  },
+  {
+    "UsuarioId": 2,
+    "TareaId": 11,
+    "Id": 0
+  },
+  {
+    "UsuarioId": 2,
+    "TareaId": 12,
+    "Id": 0
+  },
+  {
+    "UsuarioId": 1,
+    "TareaId": 13,
     "Id": 0
   }
 ]

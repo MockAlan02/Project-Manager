@@ -2,17 +2,22 @@
 using ManagerAPI.Model;
 using ManagerAPI.Services;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Persistencia.Context;
 
 namespace ManagerAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [ApiExplorerSettings(IgnoreApi = true)]
     public class TareaController:ControllerBase
     {
         private readonly TareaServices? _tareaServices;
-        public TareaController()
+        private readonly Interfaces.ILogger logger;
+        public TareaController(SqlContext context)
         {
-            _tareaServices = new("./Json/Tareas.json", "./Json/AsignacionTarea.json");
+            _tareaServices = new(context, context);
+            logger = new Logger.Logger("./Texto/AutoSaving.txt");
         }
         [HttpGet]
         public ActionResult Get()
@@ -29,14 +34,14 @@ namespace ManagerAPI.Controllers
             }
             return Ok(data);
         }
-        [HttpGet("Detalles")]
+      /*  [HttpGet("Detalles")]
         public ActionResult GetDetalles(int id)
         {
             var detalles = _tareaServices?.Detalles(id);
             if(detalles != null)
                 return Ok(detalles);
             return BadRequest();
-        }
+        }*/
         [HttpGet("ProyectoId")]
         public ActionResult GetProyectoId(int id)
         {
@@ -52,7 +57,9 @@ namespace ManagerAPI.Controllers
             {
                 return BadRequest();
             }
-            return Ok(_tareaServices!.CrearTarea(tarea));
+            logger.Info("Se creo la tarea la info es : " + tarea.ToString()!);
+            _tareaServices!.CrearTarea(tarea);
+            return Ok();
         }
         [HttpPost("Crear")]
         public ActionResult PostTarea(TareaDto tarea)
@@ -61,6 +68,8 @@ namespace ManagerAPI.Controllers
             {
                 return BadRequest();
             }
+            var tareaString = JsonConvert.SerializeObject(tarea);
+            logger.Info("se creo la tarea de tarea " + tareaString);
             return Ok(_tareaServices!.CrearTarea(tarea));
         }
         [HttpDelete]
@@ -70,6 +79,8 @@ namespace ManagerAPI.Controllers
             {
                 return BadRequest();
             }
+            logger.Info("se elimino el proyecto de id : " + id);
+            _tareaServices?.BorrarTarea(id);
             return Ok();
         }
         [HttpPut]
@@ -79,7 +90,10 @@ namespace ManagerAPI.Controllers
             {
                 return BadRequest();
             }
-            return Ok(_tareaServices!.ActualizarTarea(id,tarea));
+            var tareastring = JsonConvert.SerializeObject(tarea);
+            logger.Info("Se actualizo el proyecto de id " + id + " la info es: " + tareastring);
+            _tareaServices!.ActualizarTarea(id, tarea);
+            return Ok();
         }
     }
 }
