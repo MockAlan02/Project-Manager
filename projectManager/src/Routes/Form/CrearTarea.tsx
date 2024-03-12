@@ -31,6 +31,7 @@ export default function CrearTarea({
   onClose,
   ProyectoId,
 }: CrearTareaProps) {
+  
   const [date, setDate] = React.useState<Date>();
   const [persona, SetPersona] = useState<Personas[] | null>(null);
 
@@ -139,7 +140,7 @@ export default function CrearTarea({
             </PopoverContent>
           </Popover>
         </div>
-
+                
         <div>
           <div className="flex flex-col w-full">
             <label htmlFor="Persona" className="mb-4">
@@ -156,6 +157,30 @@ export default function CrearTarea({
               {persona && <ListarPersona personas={persona} />}
             </select>
           </div>
+        </div>
+        <div className="flex flex-col w-full">
+          <label htmlFor="no" className="mb-4">
+            Escoge una Base de datos:
+          </label>
+          <select
+            id="no"
+            className="bg-transparent rounded-xl border-blue-900"
+            {...register("BaseDatos", { required: true })}
+          >
+            <option value="" className="bg-dark-color">
+              Selecciona Estado
+              
+            </option>
+            <option value="sqlServer" className="bg-dark-color">
+            sqlServer
+            </option>
+            <option value="PostGressql" className="bg-dark-color">
+              Postgres
+            </option>
+            <option value="SqlLite" className="bg-dark-color">
+              SqlLite
+            </option>
+          </select>
         </div>
         <div className="flex w-full justify-end gap-x-6">
           <Button type="button" className="w-[120px]" onClick={onClose}>

@@ -10,6 +10,7 @@ import React from 'react';
 import Menu from './components/Menu';
 import MenuAdmin from './components/MenuAdmin';
 import Tarea from './Routes/TareasPage';
+import TaskList from './Routes/TaskList';
 
 
 const MenuWrapper: React.FC<{ element: React.ReactNode }> = ({ element }) => (
@@ -51,6 +52,10 @@ const App = createBrowserRouter([
   {
     path:"/dashboard/:id",
     element: <MenuAdminWrapper element={<Tarea/>}/>
+  }, 
+  {
+    path: "/TaskList",
+    element: <MenuAdminWrapper element={<TaskList/>}/>,
   }
 ]);
 

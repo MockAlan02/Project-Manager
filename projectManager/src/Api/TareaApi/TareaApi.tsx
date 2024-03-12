@@ -1,8 +1,9 @@
 import { CrearTareaDto2 } from "@/Interface/Detalles";
 
 
+
 export async function getTarea(id : number){
-  const response = await fetch(`https://localhost:7038/api/Facade/ProyectoId?id=${id}`)
+  const response = await fetch(import.meta.env.VITE_REACT_Domain +`/api/Facade/ProyectoId?id=${id}`)
     .then((response) => response.json())
     .catch((error) => {
       console.error("Error:", error);
@@ -13,7 +14,7 @@ export async function getTarea(id : number){
 export async function deleteTarea(itemId: number) {
   try {
     const response = await fetch(
-      `https://localhost:7038/api/Facade/BorrarTarea?id=${itemId}`,
+      import.meta.env.VITE_REACT_Domain + `/api/Facade/BorrarTarea?id=${itemId}`,
       {
         method: "DELETE",
       }
@@ -31,7 +32,7 @@ export async function deleteTarea(itemId: number) {
 }
 //EndPoint Api para Crear Tareas
 export async function crearTareaDt(data: CrearTareaDto2) {
-  const response = await fetch("https://localhost:7038/api/Facade/Crear", {
+  const response = await fetch(import.meta.env.VITE_REACT_Domain +"/api/Facade/Crear", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

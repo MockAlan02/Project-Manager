@@ -33,7 +33,7 @@ export default function Tarea() {
       if (data == null) return;
       setTarea(data);
     });
-  }, [tareas]);
+  }, [tareaSeleccionada]);
 
 
   useEffect(() => {

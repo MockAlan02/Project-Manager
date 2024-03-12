@@ -17,6 +17,7 @@ export interface DetallesDto {
     Estado: boolean;
     ExpireTime: Date;
     PersonaId: number;
+    BaseDatos: string;
   };
   export interface CrearTareaDto2 {
     ProyectoId: number;
