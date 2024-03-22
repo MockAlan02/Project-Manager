@@ -8,38 +8,39 @@ namespace Persistencia.Repositories
     public class BaseRepository<T> : IRepository<T> where T : BaseEntities
     {
         private readonly ProjectManagerContext _context;
-        private readonly DbSet<T> _entities;
-        public BaseRepository()
+        private protected readonly DbSet<T> _entities;
+        public BaseRepository(ProjectManagerContext context)
         {
-            
+            _context = context;
         }
-        public void Delete(int id)
+       
+        public IEnumerable<T> GetAll()
         {
-           var entity = _entities.FirstOrDefault(e => e.Id == id);
+            return _entities.AsEnumerable();
+        }
+
+        public async Task<T> GetById(int id)
+        {
+            return await _entities.FirstAsync(e => e.Id == id);
+        }
+
+       public async Task Delete(int id)
+        {
+            var entity =  await _entities.FirstOrDefaultAsync(e => e.Id == id);
             if (entity != null)
             {
                 _entities.Remove(entity);
             }
         }
 
-        public IEnumerable<T> GetAll()
+        public async Task Insert(T entity)
         {
-            throw new NotImplementedException();
+            await _entities.AddAsync(entity);
         }
 
-        public T GetById(int id)
+        public void Update(T entity)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Insert(T entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(int id, T newData)
-        {
-            throw new NotImplementedException();
+            _entities.Update(entity);
         }
     }
 }

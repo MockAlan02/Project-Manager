@@ -1,7 +1,0 @@
-[
-  "ConnectionString"
-  :
-  {
-    "SqlServerConnection": "Server=.\\mssqllocaldb;Database=ProjectManager;Trusted_Connection=True;"
-  }
-]

@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ManagerAPI",
+    "\\ManagerAPI\\Controllers",
+    "\\Persistencia",
+    "\\Persistencia\\Repositories"
   ],
-  "SelectedNode": "\\ManagerAPI.sln",
+  "SelectedNode": "\\Persistencia\\Repositories\\BaseRepository.cs",
   "PreviewInSolutionExplorer": false
 }
