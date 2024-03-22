@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2YM9Tcrvn1Gyy4ldb5Nz8RBO4JacxbsmCwacmxeFXh8BIKlhsvD2Yc3DNDLE2X70K9h3cylpvxVynZ3T5KYKjQ==",
+  "dgSpecHash": "ZPWiSaiA8i8PI+lOiO8Y1s472bNm0QYZCQFoDGT+w3FKUCQhapiwC14mo51gYwkkb1IxTO0+gEhNn4/aT4aUwg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alant\\OneDrive\\Escritorio\\ProjectManager\\ManagerAPI\\ManagerAPI\\ManagerAPI.csproj",
+  "projectFilePath": "C:\\Users\\alant\\OneDrive\\Escritorio\\Project-Manager\\ManagerAPI\\ManagerAPI\\ManagerAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alant\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\alant\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

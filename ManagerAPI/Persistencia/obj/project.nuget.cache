@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uBDKgxo+luEpRlQseahnwcZTkI7vEBtquqUSrH7TIZjqFfT6XTfYCZZKu6EYb/ghLfP39QqcUQt6bE8sOoqPXQ==",
+  "dgSpecHash": "a9JyPapzceXpIy51IRESTuD+XtiNYK5r5C9hJFK2+3xIBa+xXBt/fLXdjOVEuZ3CfJhxjdKUkO8srUV5uW/j6g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alant\\OneDrive\\Escritorio\\ProjectManager\\ManagerAPI\\Persistencia\\Persistencia.csproj",
+  "projectFilePath": "C:\\Users\\alant\\OneDrive\\Escritorio\\Project-Manager\\ManagerAPI\\Persistencia\\Persistencia.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alant\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\alant\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

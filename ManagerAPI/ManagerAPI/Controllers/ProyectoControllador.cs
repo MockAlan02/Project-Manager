@@ -1,5 +1,4 @@
-﻿using ManagerAPI.Model;
-using ManagerAPI.Services;
+﻿using ManagerAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Persistencia.Context;

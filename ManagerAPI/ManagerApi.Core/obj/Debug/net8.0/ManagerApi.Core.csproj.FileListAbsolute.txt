@@ -1,0 +1,5 @@
+C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\ManagerApi.Core\obj\Debug\net8.0\ManagerApi.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\ManagerApi.Core\obj\Debug\net8.0\ManagerApi.Core.AssemblyInfoInputs.cache
+C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\ManagerApi.Core\obj\Debug\net8.0\ManagerApi.Core.AssemblyInfo.cs
+C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\ManagerApi.Core\obj\Debug\net8.0\ManagerApi.Core.csproj.CoreCompileInputs.cache
+C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\ManagerApi.Core\obj\Debug\net8.0\ManagerApi.Core.sourcelink.json

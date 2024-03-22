@@ -1,13 +1,7 @@
-﻿using ManagerAPI.Dto;
-using ManagerAPI.Facade;
-using ManagerAPI.Model;
-using ManagerAPI.Services;
+﻿using ManagerAPI.Facade;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Persistencia.Context;
-using Persistencia;
-using System.Threading;
-using ManagerAPI.Repositorio;
 
 namespace ManagerAPI.Controllers
 {
@@ -27,7 +21,7 @@ namespace ManagerAPI.Controllers
         [HttpGet]
         public ActionResult GetAllUser()
         {
-            var _tareas = _facade?.GetAllUser();
+            var _tareas = _facade?.GetAllUser);
             if(_tareas != null)
             {
                 return Ok(_tareas);

@@ -1221,6 +1221,16 @@
             "rid": "win"
           }
         }
+      },
+      "ManagerApi.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/ManagerApi.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ManagerApi.Core.dll": {}
+        }
       }
     }
   },
@@ -3217,10 +3227,16 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "ManagerApi.Core/1.0.0": {
+      "type": "project",
+      "path": "../ManagerApi.Core/ManagerApi.Core.csproj",
+      "msbuildProject": "../ManagerApi.Core/ManagerApi.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "ManagerApi.Core >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 8.0.2",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.2",
       "Microsoft.EntityFrameworkCore.Sqlite >= 8.0.2",
@@ -3233,11 +3249,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alant\\OneDrive\\Escritorio\\ProjectManager\\ManagerAPI\\Persistencia\\Persistencia.csproj",
+      "projectUniqueName": "C:\\Users\\alant\\OneDrive\\Escritorio\\Project-Manager\\ManagerAPI\\Persistencia\\Persistencia.csproj",
       "projectName": "Persistencia",
-      "projectPath": "C:\\Users\\alant\\OneDrive\\Escritorio\\ProjectManager\\ManagerAPI\\Persistencia\\Persistencia.csproj",
+      "projectPath": "C:\\Users\\alant\\OneDrive\\Escritorio\\Project-Manager\\ManagerAPI\\Persistencia\\Persistencia.csproj",
       "packagesPath": "C:\\Users\\alant\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alant\\OneDrive\\Escritorio\\ProjectManager\\ManagerAPI\\Persistencia\\obj\\",
+      "outputPath": "C:\\Users\\alant\\OneDrive\\Escritorio\\Project-Manager\\ManagerAPI\\Persistencia\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alant\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3253,7 +3269,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\alant\\OneDrive\\Escritorio\\Project-Manager\\ManagerAPI\\ManagerApi.Core\\ManagerApi.Core.csproj": {
+              "projectPath": "C:\\Users\\alant\\OneDrive\\Escritorio\\Project-Manager\\ManagerAPI\\ManagerApi.Core\\ManagerApi.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
