@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ManagerApi.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2fb12ecdf14f5c4fef34d378bf43411196eeea1a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+81c144f88181634ea441dc01bbdff1b8884355fe")]
 [assembly: System.Reflection.AssemblyProductAttribute("ManagerApi.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ManagerApi.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

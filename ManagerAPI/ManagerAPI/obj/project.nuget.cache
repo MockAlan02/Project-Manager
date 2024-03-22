@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ZPWiSaiA8i8PI+lOiO8Y1s472bNm0QYZCQFoDGT+w3FKUCQhapiwC14mo51gYwkkb1IxTO0+gEhNn4/aT4aUwg==",
+  "dgSpecHash": "ma5wz5ZtmcnfrFzhuU8T1EbaA/0vY/tCJHppEg5ZrtzBQSwm7E+QhuvDpv7V3fLz/BRPKaxnpKr40qJxI/CYJA==",
   "success": true,
   "projectFilePath": "C:\\Users\\alant\\OneDrive\\Escritorio\\Project-Manager\\ManagerAPI\\ManagerAPI\\ManagerAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\alant\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\alant\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\alant\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\alant\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

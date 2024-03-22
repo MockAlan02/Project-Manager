@@ -1,8 +1,8 @@
-using ManagerAPI.Repositorio;
+using ManagerApi.Core.Interface;
+using ManagerAPI.Core.Interface;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Persistencia.Context;
-using Persistencia.Interfaz;
+using Persistencia.Repositories;
 using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +19,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<SqlContext>(options =>
         options.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection")));
 
+//Pattern UnitOfWork
+builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+
+//Generic Repository
+builder.Services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -83,6 +83,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "C:\\Users\\alant\\OneDrive\\Escritorio\\Project-Manager\\ManagerAPI\\ManagerApi.Core\\ManagerApi.Core.csproj": {
+                "projectPath": "C:\\Users\\alant\\OneDrive\\Escritorio\\Project-Manager\\ManagerAPI\\ManagerApi.Core\\ManagerApi.Core.csproj"
+              },
               "C:\\Users\\alant\\OneDrive\\Escritorio\\Project-Manager\\ManagerAPI\\Persistencia\\Persistencia.csproj": {
                 "projectPath": "C:\\Users\\alant\\OneDrive\\Escritorio\\Project-Manager\\ManagerAPI\\Persistencia\\Persistencia.csproj"
               }
@@ -171,6 +174,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.2, )"

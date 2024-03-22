@@ -8,19 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <_ContentIncludedByDefault Remove="json\Usuarios.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Texto\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\ManagerApi.Core\ManagerApi.Core.csproj" />
     <ProjectReference Include="..\Persistencia\Persistencia.csproj" />
   </ItemGroup>
 
