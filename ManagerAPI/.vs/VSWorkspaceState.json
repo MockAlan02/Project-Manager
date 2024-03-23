@@ -2,10 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\ManagerAPI",
+    "\\ManagerApi.Core",
+    "\\ManagerApi.Core\\Services",
     "\\ManagerAPI\\Controllers",
     "\\Persistencia",
     "\\Persistencia\\Repositories"
   ],
-  "SelectedNode": "\\ManagerAPI.sln",
+  "SelectedNode": "\\ManagerApi.Core\\Services\\HomeworkService.cs",
   "PreviewInSolutionExplorer": false
 }
