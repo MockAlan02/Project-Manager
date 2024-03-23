@@ -1,4 +1,5 @@
-﻿using ManagerApi.Core.Entities;
+﻿using ManagerApi.Core.Dto;
+using ManagerApi.Core.Entities;
 
 namespace ManagerApi.Core.Interface
 {

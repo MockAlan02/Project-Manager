@@ -3,8 +3,11 @@ namespace ManagerApi.Core.Interface
 {
     public interface IUnitOfWork:IDisposable
     {
-        IRepository<Tarea> HomeworkService { get; }
+        IHomeworkRepository HomeworkService { get; }
         IRepository<Proyecto> ProyectoService{ get; }
+        IRepository<Usuario> UsuarioService{ get; }
+        IRepository<UsuarioDetalle> UsuarioDetailService { get; }
+        IAsignacionUsuarioRepository AsignacionRepo { get; }
         void SaveChanges();
         Task SaveChangesAsync();
     }
