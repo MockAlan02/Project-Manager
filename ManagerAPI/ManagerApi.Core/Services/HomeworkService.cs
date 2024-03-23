@@ -1,6 +1,5 @@
-﻿using ManagerApi.Core.Interface;
-using ManagerAPI.Core.Entities;
-using ManagerAPI.Core.Interface;
+﻿using ManagerApi.Core.Entities;
+using ManagerApi.Core.Interface;
 
 
 namespace ManagerApi.Core.Interface

@@ -3,3 +3,10 @@ C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\ManagerApi.Core\ob
 C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\ManagerApi.Core\obj\Debug\net8.0\ManagerApi.Core.AssemblyInfo.cs
 C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\ManagerApi.Core\obj\Debug\net8.0\ManagerApi.Core.csproj.CoreCompileInputs.cache
 C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\ManagerApi.Core\obj\Debug\net8.0\ManagerApi.Core.sourcelink.json
+C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\ManagerApi.Core\bin\Debug\net8.0\ManagerApi.Core.deps.json
+C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\ManagerApi.Core\bin\Debug\net8.0\ManagerApi.Core.dll
+C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\ManagerApi.Core\bin\Debug\net8.0\ManagerApi.Core.pdb
+C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\ManagerApi.Core\obj\Debug\net8.0\ManagerApi.Core.dll
+C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\ManagerApi.Core\obj\Debug\net8.0\refint\ManagerApi.Core.dll
+C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\ManagerApi.Core\obj\Debug\net8.0\ManagerApi.Core.pdb
+C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\ManagerApi.Core\obj\Debug\net8.0\ref\ManagerApi.Core.dll

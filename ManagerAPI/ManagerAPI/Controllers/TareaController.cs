@@ -1,99 +1,34 @@
-﻿using ManagerAPI.Dto;
-using ManagerAPI.Model;
-using ManagerAPI.Services;
+﻿using ManagerApi.Core.Entities;
+using ManagerApi.Core.Interface;
+using ManagerAPI.Responses;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using Persistencia.Context;
 
 namespace ManagerAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [ApiExplorerSettings(IgnoreApi = true)]
+    [ApiExplorerSettings(IgnoreApi = false)]
     public class TareaController:ControllerBase
     {
-        private readonly TareaServices? _tareaServices;
-        private readonly Interfaces.ILogger logger;
-        public TareaController(SqlContext context)
+        private readonly IHomeworkService _homeworkService;
+        public TareaController(IHomeworkService homeworkService)
         {
-            _tareaServices = new(context, context);
-            logger = new Logger.Logger("./Texto/AutoSaving.txt");
+          _homeworkService = homeworkService;
         }
         [HttpGet]
         public ActionResult Get()
         {
-            return Ok(_tareaServices!.GetAll());
+            var homeworks = _homeworkService.GetAll();
+            var response = new ApiResponse<IEnumerable<Tarea>>(homeworks);
+            return Ok(response);
         }
 
         [HttpGet("id")]
-        public ActionResult GetId(int id) {
-            var data = _tareaServices?.GetById(id);  
-            if(data == null)
-            {
-                return BadRequest();
-            }
-            return Ok(data);
+        public async Task<IActionResult> GetId(int id) {
+            var homework = await _homeworkService.GetById(id);
+            var response = new ApiResponse<Tarea>(homework);
+            return Ok(response);
         }
-      /*  [HttpGet("Detalles")]
-        public ActionResult GetDetalles(int id)
-        {
-            var detalles = _tareaServices?.Detalles(id);
-            if(detalles != null)
-                return Ok(detalles);
-            return BadRequest();
-        }*/
-        [HttpGet("ProyectoId")]
-        public ActionResult GetProyectoId(int id)
-        {
-            var tareas = _tareaServices?.GetByProyectoId(id);
-            if (tareas != null)
-                return Ok(tareas);
-            return BadRequest();
-        }
-        [HttpPost]
-        public ActionResult Post(Tarea tarea)
-        {
-            if(tarea == null)
-            {
-                return BadRequest();
-            }
-            logger.Info("Se creo la tarea la info es : " + tarea.ToString()!);
-            _tareaServices!.CrearTarea(tarea);
-            return Ok();
-        }
-        [HttpPost("Crear")]
-        public ActionResult PostTarea(TareaDto tarea)
-        {
-            if (tarea == null)
-            {
-                return BadRequest();
-            }
-            var tareaString = JsonConvert.SerializeObject(tarea);
-            logger.Info("se creo la tarea de tarea " + tareaString);
-            return Ok(_tareaServices!.CrearTarea(tarea));
-        }
-        [HttpDelete]
-        public ActionResult Delete(int id)
-        {
-            if(id == null)
-            {
-                return BadRequest();
-            }
-            logger.Info("se elimino el proyecto de id : " + id);
-            _tareaServices?.BorrarTarea(id);
-            return Ok();
-        }
-        [HttpPut]
-        public ActionResult Put(int id, Tarea tarea)
-        {
-            if(tarea == null)
-            {
-                return BadRequest();
-            }
-            var tareastring = JsonConvert.SerializeObject(tarea);
-            logger.Info("Se actualizo el proyecto de id " + id + " la info es: " + tareastring);
-            _tareaServices!.ActualizarTarea(id, tarea);
-            return Ok();
-        }
+     
     }
 }

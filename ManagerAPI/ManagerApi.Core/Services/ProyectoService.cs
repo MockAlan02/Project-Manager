@@ -1,6 +1,5 @@
-﻿using ManagerApi.Core.Interface;
-using ManagerAPI.Core.Entities;
-using ManagerAPI.Core.Interface;
+﻿using ManagerApi.Core.Entities;
+using ManagerApi.Core.Interface;
 
 namespace ManagerApi.Core.Services
 {
@@ -11,7 +10,7 @@ namespace ManagerApi.Core.Services
         {
             _unitOfWork = unitOfWork;
         }
-        public IEnumerable<Proyectos> GetAll()
+        public IEnumerable<Proyecto> GetAll()
         {
             return _unitOfWork.ProyectoService.GetAll();
         }

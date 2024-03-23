@@ -1,7 +1,7 @@
 ﻿using ManagerApi.Core.Entities;
 using ManagerApi.Core.Interface;
 using Microsoft.EntityFrameworkCore;
-using Persistencia.Context;
+using Persistencia.Data;
 
 namespace Persistencia.Repositories
 {
@@ -9,14 +9,16 @@ namespace Persistencia.Repositories
     {
         private readonly ProjectManagerContext _context;
         private protected readonly DbSet<T> _entities;
+        
         public BaseRepository(ProjectManagerContext context)
         {
             _context = context;
+            _entities = context.Set<T>();
         }
        
         public IEnumerable<T> GetAll()
         {
-            return _entities.AsEnumerable();
+            return _entities.ToList();
         }
 
         public async Task<T> GetById(int id)

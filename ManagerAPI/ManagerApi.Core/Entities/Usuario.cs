@@ -1,15 +1,17 @@
-﻿using ManagerApi.Core.Entities;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿namespace ManagerApi.Core.Entities;
 
-namespace ManagerAPI.Core.Entities
+public partial class Usuario : BaseEntities
 {
-   
-    public class Usuario : BaseEntities
-    {
-        public string? Correo { get; set; }
-        public string? Contrasena { get; set; }
-        public int IdUsuarioDetalles{ get; set; }
-        public string? Rol { get; set; }
-    }
+
+    public int IdUsuarioDetalles { get; set; }
+
+    public string? Correo { get; set; }
+
+    public string? Contrasena { get; set; }
+
+    public string? Rol { get; set; }
+
+    public virtual ICollection<AsignacionUsuario> AsignacionUsuarios { get; set; } = new List<AsignacionUsuario>();
+
+    public virtual UsuarioDetalle IdUsuarioDetallesNavigation { get; set; } = null!;
 }

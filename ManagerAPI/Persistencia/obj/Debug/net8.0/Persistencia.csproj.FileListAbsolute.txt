@@ -20,3 +20,10 @@ C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\Persistencia\obj\D
 C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\Persistencia\obj\Debug\net8.0\Persistencia.dll
 C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\Persistencia\obj\Debug\net8.0\refint\Persistencia.dll
 C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\Persistencia\obj\Debug\net8.0\Persistencia.pdb
+C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\Persistencia\bin\Debug\net8.0\Persistencia.deps.json
+C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\Persistencia\bin\Debug\net8.0\Persistencia.dll
+C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\Persistencia\bin\Debug\net8.0\Persistencia.pdb
+C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\Persistencia\bin\Debug\net8.0\ManagerApi.Core.dll
+C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\Persistencia\bin\Debug\net8.0\ManagerApi.Core.pdb
+C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\Persistencia\obj\Debug\net8.0\Persistencia.csproj.CopyComplete
+C:\Users\alant\OneDrive\Escritorio\Project-Manager\ManagerAPI\Persistencia\obj\Debug\net8.0\ref\Persistencia.dll

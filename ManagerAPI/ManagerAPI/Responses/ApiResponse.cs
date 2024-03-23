@@ -1,13 +1,8 @@
 ﻿namespace ManagerAPI.Responses
 {
-    public class ApiResponse<T>
+    public class ApiResponse<T>(T data)
     {
-        public T Data { get; set; }
-        public ApiResponse(T data)
-        {
-            Data = data;
-        }
-
+        public T Data { get; set; } = data;
     }
 
 }

@@ -1,12 +1,10 @@
-﻿using ManagerApi.Core.Interface;
-using ManagerAPI.Core.Entities;
-
-namespace ManagerAPI.Core.Interface
+﻿using ManagerApi.Core.Entities;
+namespace ManagerApi.Core.Interface
 {
     public interface IUnitOfWork:IDisposable
     {
         IRepository<Tarea> HomeworkService { get; }
-        IRepository<Proyectos> ProyectoService{ get; }
+        IRepository<Proyecto> ProyectoService{ get; }
         void SaveChanges();
         Task SaveChangesAsync();
     }

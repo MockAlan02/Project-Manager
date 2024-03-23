@@ -1,9 +1,9 @@
-﻿using ManagerAPI.Core.Entities;
+﻿using ManagerApi.Core.Entities;
 
 namespace ManagerApi.Core.Interface
 {
     public interface IProyectoService
     {
-        IEnumerable<Proyectos> GetAll();
+        IEnumerable<Proyecto> GetAll();
     }
 }
